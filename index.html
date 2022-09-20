@@ -13,54 +13,80 @@
         <img src="./music-wallpaper.jpg" alt="" />
       </div>
       <div class="keys">
-        <div data-key="65" class="key">
+        <a onclick="Animals()" href="#" data-key="65" class="key">
           <kbd>A</kbd>
           <span class="sound">animals</span>
-        </div>
-        <div data-key="83" class="key">
+        </a>
+
+        <a onclick="Cool_out()" href="#" data-key="83" class="key">
           <kbd>S</kbd>
           <span class="sound">cool out</span>
-        </div>
-        <div data-key="68" class="key">
+        </a>
+
+        <a onclick="God()" href="#" data-key="68" class="key">
           <kbd>D</kbd>
           <span class="sound">god is a woman</span>
-        </div>
-        <div data-key="70" class="key">
+        </a>
+
+        <a
+          onclick="harderPlay()"
+          window.location.hash=""
+          data-key="70"
+          class="key"
+        >
           <kbd>F</kbd>
           <span class="sound">harder</span>
-        </div>
-        <div data-key="71" class="key">
+        </a>
+
+        <a
+          onclick="lessonsPlay()"
+          window.location.hash=""
+          data-key="71"
+          class="key"
+        >
           <kbd>G</kbd>
           <span class="sound">lessons</span>
-        </div>
-        <div data-key="72" class="key">
+        </a>
+
+        <a onclick="Somebody()" href="#" data-key="72" class="key">
           <kbd>H</kbd>
           <span class="sound">love somebody</span>
-        </div>
-        <div data-key="74" class="key">
+        </a>
+
+        <a onclick="Secret()" href="#" data-key="74" class="key">
           <kbd>J</kbd>
           <span class="sound">secret</span>
-        </div>
-        <div data-key="75" class="key">
+        </a>
+
+        <a onclick="Selfish()" href="#" data-key="75" class="key">
           <kbd>K</kbd>
           <span class="sound">selfish love</span>
-        </div>
-        <div data-key="76" class="key">
+        </a>
+
+        <a onclick="Unstoppable()" href="#" data-key="76" class="key">
           <kbd>L</kbd>
           <span class="sound">unstoppable</span>
-        </div>
+        </a>
       </div>
     </div>
 
-    <audio data-key="65" src="./sounds/01 Maroon 5 - Animals.mp3"></audio>
-    <audio data-key="83" src="./sounds/Cool Out.mp3"></audio>
-    <audio data-key="68" src="./sounds/God Is A Woman.mp3"></audio>
-    <audio data-key="70" src="./sounds/Harder.mp3"></audio>
-    <audio data-key="71" src="./sounds/Lessons.mp3"></audio>
-    <audio data-key="72" src="./sounds/Love Somebody.mp3"></audio>
-    <audio data-key="74" src="./sounds/Secret.mp3"></audio>
-    <audio data-key="75" src="./sounds/selfish love.mp3"></audio>
-    <audio data-key="76" src="./sounds/Unstoppable.mp3"></audio>
+    <audio
+      id="animals"
+      data-key="65"
+      src="./sounds/01 Maroon 5 - Animals.mp3"
+    ></audio>
+    <audio id="cool_out" data-key="83" src="./sounds/Cool Out.mp3"></audio>
+    <audio id="god" data-key="68" src="./sounds/God Is A Woman.mp3"></audio>
+    <audio id="harder" data-key="70" src="./sounds/Harder.mp3"></audio>
+    <audio id="lessons" data-key="71" src="./sounds/Lessons.mp3"></audio>
+    <audio id="somebody" data-key="72" src="./sounds/Love Somebody.mp3"></audio>
+    <audio id="secret" data-key="74" src="./sounds/Secret.mp3"></audio>
+    <audio id="selfish" data-key="75" src="./sounds/selfish love.mp3"></audio>
+    <audio
+      id="unstoppable"
+      data-key="76"
+      src="./sounds/Unstoppable.mp3"
+    ></audio>
   </body>
   <script>
     function playSound(e) {
@@ -74,6 +100,106 @@
 
       key.classList.toggle("playing");
     }
+
+    var cool_out = document.getElementById("cool_out");
+    var animals = document.getElementById("animals");
+    var god = document.getElementById("god");
+    var harder = document.getElementById("harder");
+    var lessons = document.getElementById("lessons");
+    var somebody = document.getElementById("somebody");
+    var secret = document.getElementById("secret");
+    var selfish = document.getElementById("selfish");
+    var unstoppable = document.getElementById("unstoppable");
+    var isPlaying = false;
+    function Animals() {
+      isPlaying ? animals.pause() : animals.play();
+    }
+    animals.onplaying = function () {
+      isPlaying = true;
+    };
+    animals.onpause = function () {
+      isPlaying = false;
+    };
+
+    function Cool_out() {
+      isPlaying ? cool_out.pause() : cool_out.play();
+    }
+    cool_out.onplaying = function () {
+      isPlaying = true;
+    };
+    cool_out.onpause = function () {
+      isPlaying = false;
+    };
+
+    function God() {
+      isPlaying ? god.pause() : god.play();
+    }
+    god.onplaying = function () {
+      isPlaying = true;
+    };
+    god.onpause = function () {
+      isPlaying = false;
+    };
+
+    function harderPlay() {
+      isPlaying ? harder.pause() : harder.play();
+    }
+    harder.onplaying = function () {
+      isPlaying = true;
+    };
+    harder.onpause = function () {
+      isPlaying = false;
+    };
+
+    function lessonsPlay() {
+      isPlaying ? lessons.pause() : lessons.play();
+    }
+    lessons.onplaying = function () {
+      isPlaying = true;
+    };
+    lessons.onpause = function () {
+      isPlaying = false;
+    };
+
+    function Somebody() {
+      isPlaying ? somebody.pause() : somebody.play();
+    }
+    somebody.onplaying = function () {
+      isPlaying = true;
+    };
+    somebody.onpause = function () {
+      isPlaying = false;
+    };
+
+    function Secret() {
+      isPlaying ? secret.pause() : secret.play();
+    }
+    secret.onplaying = function () {
+      isPlaying = true;
+    };
+    secret.onpause = function () {
+      isPlaying = false;
+    };
+
+    function Selfish() {
+      isPlaying ? selfish.pause() : selfish.play();
+    }
+    selfish.onplaying = function () {
+      isPlaying = true;
+    };
+    selfish.onpause = function () {
+      isPlaying = false;
+    };
+
+    function Unstoppable() {
+      isPlaying ? unstoppable.pause() : unstoppable.play();
+    }
+    unstoppable.onplaying = function () {
+      isPlaying = true;
+    };
+    unstoppable.onpause = function () {
+      isPlaying = false;
+    };
 
     function removeTransition(e) {
       if (e.propertyName !== "transition") return; //skip it if it's not a transform
