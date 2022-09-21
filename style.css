@@ -54,6 +54,11 @@ img{
 .key:hover{
     border:pink;
 }
+.key:focus{
+    transform: scale(0.8);
+    border-color: #ba4a4a;
+    box-shadow: 0 0 10px #ba4a4a;
+}
 .sound{
     color:skyblue;
 }

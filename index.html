@@ -63,9 +63,14 @@
           <span class="sound">selfish love</span>
         </a>
 
-        <a onclick="Unstoppable()" href="#" data-key="76" class="key">
+        <a onclick="Unstoppable()" href="#" data-key="186" class="key">
           <kbd>L</kbd>
           <span class="sound">unstoppable</span>
+        </a>
+
+        <a onclick="Night()" href="#" data-key="" class="key">
+          <kbd>;</kbd>
+          <span class="sound">night changes</span>
         </a>
       </div>
     </div>
@@ -86,6 +91,11 @@
       id="unstoppable"
       data-key="76"
       src="./sounds/Unstoppable.mp3"
+    ></audio>
+    <audio
+      id="night"
+      data-key="186"
+      src="./sounds/07 Night Changes.mp3"
     ></audio>
   </body>
   <script>
@@ -110,6 +120,7 @@
     var secret = document.getElementById("secret");
     var selfish = document.getElementById("selfish");
     var unstoppable = document.getElementById("unstoppable");
+    var night = document.getElementById("night");
     var isPlaying = false;
 
     function Animals() {
@@ -201,6 +212,20 @@
     unstoppable.onpause = function () {
       isPlaying = false;
     };
+
+    function Night() {
+      isPlaying ? night.pause() : night.play();
+    }
+    night.onplaying = function () {
+      isPlaying = true;
+    };
+    night.onpause = function () {
+      isPlaying = false;
+    };
+
+    // document.getElementsByTagName("a").addEventListener("click", function (e) {
+    //   document.getElementsByTagName("a").classList.toggle("playing");
+    // });
 
     function removeTransition(e) {
       if (e.propertyName !== "transition") return; //skip it if it's not a transform
